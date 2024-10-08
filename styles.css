@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3d409;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background: rgb(6, 252, 252);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+.button-container {
+    margin: 15px 0;
+}
+
+.story-button {
+    background-color: #007bff; /* Default color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make button circular */
+    padding: 20px;
+    width: 70px; /* Width of the button */
+    height: 70px; /* Height of the button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.story-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Add specific colors for different buttons */
+#word1 {
+    background-color: #ff5733; /* Red */
+}
+
+#word2 {
+    background-color: #33ff57; /* Green */
+}
+
+#word3 {
+    background-color: #3357ff; /* Blue */
+}
+
+#word4 {
+    background-color: #ff33a1; /* Pink */
+}
+
+#word5 {
+    background-color: #ffd633; /* Yellow */
+}
+
+.action-button {
+    background-color: #28a745; /* Green for action buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #218838; /* Darker shade on hover */
+}
+
+.selection-display {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.story-output {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
