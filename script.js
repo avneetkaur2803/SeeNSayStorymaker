@@ -23,6 +23,14 @@ class StoryMaker {
         document.getElementById('showStory').addEventListener('click', () => {
             this.showStory();
         });
+
+        document.getElementById('randomStory').addEventListener('click', () => {
+            this.generateRandomStory();
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            this.resetSelections();
+        });
     }
 
     selectWord(index, span) {
@@ -35,6 +43,29 @@ class StoryMaker {
     showStory() {
         const story = this.selectedWords.join(' ');
         document.getElementById('storyOutput').textContent = story;
+    }
+
+    generateRandomStory() {
+        this.selectedWords = this.words.map(wordsArray => {
+            const randomIndex = Math.floor(Math.random() * wordsArray.length);
+            return wordsArray[randomIndex];
+        });
+        this.updateStoryDisplay();
+    }
+
+    resetSelections() {
+        this.selectedWords.fill('');
+        for (let i = 1; i <= this.words.length; i++) {
+            document.getElementById(`selectedWord${i}`).textContent = '';
+        }
+        document.getElementById('storyOutput').textContent = '';
+    }
+
+    updateStoryDisplay() {
+        for (let i = 0; i < this.selectedWords.length; i++) {
+            document.getElementById(`selectedWord${i + 1}`).textContent = this.selectedWords[i];
+        }
+        this.showStory();
     }
 }
 
