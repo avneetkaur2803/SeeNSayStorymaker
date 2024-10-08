@@ -43,6 +43,7 @@ class StoryMaker {
     showStory() {
         const story = this.selectedWords.join(' ');
         document.getElementById('storyOutput').textContent = story;
+        this.speakStory(story); // Call the speakStory method to read aloud the story
     }
 
     generateRandomStory() {
@@ -66,6 +67,11 @@ class StoryMaker {
             document.getElementById(`selectedWord${i + 1}`).textContent = this.selectedWords[i];
         }
         this.showStory();
+    }
+
+    speakStory(story) {
+        const utterance = new SpeechSynthesisUtterance(story);
+        speechSynthesis.speak(utterance);
     }
 }
 
