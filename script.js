@@ -8,6 +8,7 @@ class StoryMaker {
             ["and lived happily ever after", "and became a legend", "and changed the world"] // Endings
         ];
         this.selectedWords = Array(this.words.length).fill(''); // Initialize selected words
+        this.audio = new Audio('button-click.mp3'); // Load the audio file once
         this.initButtons(); // Initialize buttons and their functionality
     }
 
@@ -25,19 +26,19 @@ class StoryMaker {
         // Event listener for showing the constructed story
         document.getElementById('showStory').addEventListener('click', () => {
             this.showStory(); // Display the constructed story
-            this.playSound(); // Play sound when showing story
+
         });
 
         // Event listener for generating a random story
         document.getElementById('randomStory').addEventListener('click', () => {
             this.generateRandomStory(); // Create a random story
-            this.playSound(); // Play sound when generating random story
+            
         });
 
         // Event listener for resetting selections
         document.getElementById('reset').addEventListener('click', () => {
             this.resetSelections(); // Clear all selections and outputs
-            this.playSound(); // Play sound when resetting
+            
         });
     }
 
@@ -90,8 +91,8 @@ class StoryMaker {
 
     // Method to play button click sound
     playSound() {
-        const audio = new Audio('button-click.mp3'); // Load the audio file
-        audio.play(); // Play the sound
+        this.audio.currentTime = 0; // Rewind the audio to the start
+        this.audio.play().catch(error => console.error('Audio playback failed:', error));
     }
 }
 

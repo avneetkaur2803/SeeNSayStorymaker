@@ -1,15 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3d409;
+    background-color: #0684f3;
     margin: 0;
     padding: 20px;
 }
 
 .container {
-    max-width: 600px;
+    width: 90%; /* Use a percentage width to make it responsive */
+    max-width: 1200px; /* Set a maximum width for larger screens */
     margin: auto;
     text-align: center;
-    background: rgb(6, 252, 252);
+    background: rgb(246, 222, 5);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -17,6 +18,9 @@ body {
 
 h1 {
     color: #333;
+    font-size: 2.5em; /* Increased font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -45,25 +49,52 @@ h2 {
 }
 
 /* Add specific colors for different buttons */
+/* Add specific colors for different buttons */
 #word1 {
-    background-color: #ff5733; /* Red */
+    background-color: #f30606; /* Red */
+}
+
+#word1:hover {
+    background-color: #c20404; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly increase the size of the button on hover */
 }
 
 #word2 {
     background-color: #33ff57; /* Green */
 }
 
+#word2:hover {
+    background-color: #28cc47; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly increase the size of the button on hover */
+}
+
 #word3 {
     background-color: #3357ff; /* Blue */
+}
+
+#word3:hover {
+    background-color: #2342b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly increase the size of the button on hover */
 }
 
 #word4 {
     background-color: #ff33a1; /* Pink */
 }
 
-#word5 {
-    background-color: #ffd633; /* Yellow */
+#word4:hover {
+    background-color: #cc2981; /* Darker pink on hover */
+    transform: scale(1.1); /* Slightly increase the size of the button on hover */
 }
+
+#word5 {
+    background-color: #08f9e9; /* Yellow */
+}
+
+#word5:hover {
+    background-color: #06c9b9; /* Darker yellow on hover */
+    transform: scale(1.1); /* Slightly increase the size of the button on hover */
+}
+
 
 .action-button {
     background-color: #28a745; /* Green for action buttons */
@@ -85,8 +116,29 @@ h2 {
     font-weight: bold;
 }
 
+/* Styles for the story output box */
 .story-output {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
+    background-color: #e9ecef; /* Light grey background */
+    padding: 15px;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Increase width on smaller screens */
+        padding: 15px; /* Reduce padding for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Full width for very small screens */
+        padding: 10px; /* Further reduce padding */
+    }
 }
